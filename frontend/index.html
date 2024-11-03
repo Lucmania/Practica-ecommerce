@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eCommerce</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="../Marca logo.png" type="image/x-icon">
+</head>
+
+<body>
+    <nav>
+        <button id="loginButton">Administrador</button>
+    </nav>
+
+    <div id="loginFormContainer" style="display:none;">
+        <form id="loginForm">
+            <input type="text" id="username" placeholder="Usuario" required />
+            <input type="password" id="password" placeholder="Contraseña" required />
+            <button id="submitLogin">Entrar</button>
+            <button type="button" id="closeLoginForm">Cerrar</button>
+        </form>
+    </div>
+
+    <h1>Bienvenido a la tienda de LC</h1>
+
+    <!-- Buscador -->
+    <section>
+        <label for="search">Buscar por descripción:</label>
+        <input type="text" id="search" placeholder="Ingrese descripción...">
+        <button onclick="buscarProductos()">Buscar</button>
+        <button onclick="cambiarVista('lista')">Vista de Lista</button>
+        <button onclick="cambiarVista('cuadrícula')">Vista de Cuadrícula</button>
+    </section>
+
+    <!-- Filtro por Rubro -->
+    <section>
+        <label for="rubro">Filtrar por rubro:</label>
+        <select id="rubro" onchange="filtrarPorRubro()">
+            <option value="">Todos</option>
+            <!-- Opciones de rubro serán cargadas dinámicamente -->
+        </select>
+    </section>
+
+    <!-- Lista de Productos -->
+    <section id="productos" class="productos-lista">
+        <div class="product-list">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Descripción</th>
+                        <th>Precio</th>
+                        <th>Rubro</th>
+                        <th>Foto</th>
+                    </tr>
+                </thead>
+                <tbody id="product-list-body">
+                    <!-- Los productos se generarán dinámicamente aquí -->
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>

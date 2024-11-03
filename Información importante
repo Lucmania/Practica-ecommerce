@@ -1,0 +1,57 @@
+La pantalla principal del proyecto, es el html nombrado index.html en el front, este archivo contendra las diferentes vistas de los
+productos con las configuraciones de visualización solicitadas, un buscador por descripcion y filtro de rubro.
+Esta página representa la visualizacion de la "tienda ececommerce" desde el lado de un cliente, pudiendo ver y buscar los productos
+según sean de su interes; no cuenta con carrito de compras ni ningun botón o acción de compra por no haber sido solicitado.
+
+La pantalla "secundaria", pero más importante, podra acceder a ella desde el boton de administrador que se sitúa arriba a la derecha.
+Este botón le mostrara un login, el cual requerira de un usuario registrado en la base de datos, donde más adelante le paso uno para
+que compruebe su funcionalidad y pueda acceder a la pantalla de administración.
+Esta pantalla fue creada por más que no fuese solicitada para que este separada las funcionalidades de ABM de los productos de la pantalla
+de los clientes a la de un administrador, para que no fuera incomodo o poco atractivo y para solucionar posibles errores futuros, busque
+realizar la actividad de esta manera.
+
+Al iniciar sesión podra acceder a la información interna de todos los productos, a su vez como podra crearlos, modificarlos o borrarlos;
+los productos requieren de un link url para que los productos tengan su imagen a momento de visualizarlo como cliente, los precios
+con la posibilidad de registrarlos con precios decimales, y se optó por darles a los productos un nombre separado de su descripción,
+para mayor atractivo de los clientes.
+
+Espero el trabajo sea de su agrado, ya que aún hay multiples mejoras posibles a realizar para este proyecto y hacerlo mucho más complejo
+y completo.
+
+Realizado por Lucas Costamagna,
+y gracias por ver mi trabajo.
+
+Para realizar la creacion de un nuevo usuario se utiliza el siguiente request (en mi caso realizado desde postman):
+http://localhost:5000/api/auth/register (utilizando el metodo POST)
+
+Estructura del raw json con el cual se registro desde postman:
+{
+    "username": "Francisco Javier Becerra",
+    "password": "hola1234"
+}
+
+ya hay una cuenta registrada para no tener que realizar esta accion:
+Usuario: Francisco Javier Becerra
+Password: hola1234
+
+API creadas y utilizadas para los productos:
+* Para registrar un producto:
+http://localhost:5000/api/productos
+
+Estructura del raw json con el cual se registro desde postman:
+{
+    "Descripcion": "Teléfono",
+    "Rubro": 1,
+    "Precio": 256000,
+    "URLImagen": "https://th.bing.com/th/id/R.5705101710c048e159c600a69c262bec?rik=J%2bh1rZ%2bkEXvt1w&pid=ImgRaw&r=0"
+}
+
+* Para recibir los productos:
+http://localhost:5000/api/productos
+
+* Para actualizar los productos:
+http://localhost:5000/api/productos/1
+(el 1 representa el id (o codigo en caso de la tabla) del producto al cual se busque llamar)
+
+* Para eliminar los productos:
+http://localhost:5000/api/productos/1

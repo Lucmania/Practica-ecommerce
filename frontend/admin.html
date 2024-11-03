@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Administración de Productos</title>
+    <link rel="stylesheet" href="admin.css">
+    <link rel="icon" href="../Marca logo.png" type="image/x-icon">
+</head>
+
+<body>
+    <div class="header">
+        <h1>Administración de Productos</h1>
+        <button id="logoutButton" class="logout-btn">Cerrar Sesión</button>
+    </div>
+    
+    <button id="btn-agregar-producto">Agregar Producto</button>
+
+    <!-- Formulario de agregar producto -->
+    <div id="form-agregar-producto" style="display: none;">
+        <h2>Agregar Producto</h2>
+        <form id="nuevo-producto-form">
+            <input type="text" id="nombre" placeholder="Nombre" required>
+            <input type="text" id="descripcion" placeholder="Descripción" required>
+            <select id="rubro" required></select>
+            <input type="number" id="precio" placeholder="Precio" step="0.01" required>
+            <input type="text" id="url-imagen" placeholder="URL de Imagen" required>
+            <button type="submit">Agregar Producto</button>
+        </form>
+    </div>
+
+    <!-- Formulario de modificar producto -->
+    <div id="form-modificar-producto" style="display: none;">
+        <h2>Modificar Producto</h2>
+        <form id="modificar-producto-form">
+            <input type="hidden" id="codigo-modificar">
+            <input type="text" id="nombre-modificar" placeholder="Nombre" required>
+            <input type="text" id="descripcion-modificar" placeholder="Descripción" required>
+            <select id="rubro-modificar" required></select>
+            <input type="number" id="precio-modificar" placeholder="Precio" step="0.01" required>
+            <input type="text" id="url-imagen-modificar" placeholder="URL de Imagen" required>
+            <button type="submit">Modificar Producto</button>
+        </form>
+    </div>
+
+    <!-- Tabla de productos -->
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Rubro</th>
+                <th>Precio</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody id="tbody-productos"></tbody>
+    </table>
+
+    <script src="admin.js"></script>
+</body>
+
+</html>
